@@ -12,7 +12,7 @@ import (
 )
 
 const (
-	Key = "xx"
+	 Key = "xx"
 	Uri = "https://restapi.amap.com/v3/weather/weatherInfo"
 )
 
@@ -33,7 +33,6 @@ func GetWeatherRequest(code int) (entity.ResponseInfo, error) {
 	info := entity.ResponseInfo{}
 	client := &http.Client{Timeout: 2 * time.Second}
 	url := fmt.Sprintf(Uri+"?key=%s&city=%d", Key, code)
-	fmt.Println("请求接口:", url)
 	resp, err := client.Get(url)
 	if err != nil {
 		fmt.Println("查询错误:", err)
